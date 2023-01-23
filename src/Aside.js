@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Search from "./Search";
+import SearchByName from "./SearchByName";
 import Filter from "./Filter";
 import Favourite from "./Favourite";
 import ExtraInfo from "./ExtraInfo";
@@ -9,7 +9,7 @@ class Aside extends Component {
         return(
             <div className="aside-container">
                 <p>Logo</p>
-                <Search />
+                <SearchByName />
                 <Filter />
                 <Favourite />
                 <ExtraInfo />

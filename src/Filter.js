@@ -4,7 +4,7 @@ class Filter extends Component {
     render(){
         return(
             <div className="filter">
-                filter by
+                filter by status
             </div>
         )
     }
