@@ -1,0 +1,9 @@
+* {
+    border: 2px solid rgb(196, 195, 203);
+    font-size: 30px;
+}
+
+.App {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}

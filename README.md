@@ -19,11 +19,33 @@ I created a list of Rick and Morty characters using a Rick and Morti [API](https
 ***
 - [ ] As a user, I should be able to search for characters
 - [ ] As a user, I should be able to filter through characters based on some requirements
-- [ ] As a user, I should be able to add characters to my favourite list as well as empty this list
+- [ ] As a user, I should be able to add characters to my favourite list as well as empty this list by selecthing them individually or all at once
 - [ ] As a user, I should be able to see more information about the character I clicked 
-<!-- - [ ] As a user, I should be able to add more characters to my screen -->
+- [ ] As a user, I should be able to add more characters to my screen
+- [ ] As a user, I should be able to
+
+Extras
+- [ ] Make the app Responsive
+- [ ] Save the data to localStorage or an API
+
+
 
 ## Overview
+
+### Structure
+1. index
+2. App
+    - Aside
+        - search
+        - filter
+        - fav
+    - Main
+        - character
+
+### Static version of app
+
+
+
 
 ## Challenges
 
