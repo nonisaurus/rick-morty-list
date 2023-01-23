@@ -5,12 +5,12 @@ import Main from './Main';
 import { getCharacter } from 'rickmortyapi'
 
 class App extends Component {
-  // constructor(props){
-  //   super(props)
-  //   this.state({
-
-  //   })
-  // }
+  constructor(props){
+    super(props)
+    this.state = {
+      onLoadCharacters: []
+    }
+  }
 
   componentDidMount(){
     // the website will load while this will get its data in the background (async keyword means it's expecting something asynchronous to happen inside the function)
@@ -22,11 +22,11 @@ class App extends Component {
       console.log(randomNumber)
       
       // await goes with it
-      const initialCharacters = await getCharacter(randomNumber)
-      console.log(initialCharacters)
+      const onLoadCharacters = await getCharacter(randomNumber)
+      console.log(onLoadCharacters)
 
       this.setState({
-        initialCharacters: initialCharacters.data
+        onLoadCharacters: onLoadCharacters.data
       })
 
     } 
@@ -37,7 +37,7 @@ class App extends Component {
     return (
       <div className="App">
         <Aside />
-        <Main />
+        <Main onLoadCharacters={this.state.onLoadCharacters} />
       </div>
     );
   }
