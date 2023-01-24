@@ -109,10 +109,18 @@ class App extends Component {
 
   // EXTRA INFO WHEN CHARACTER CARD CLICKED
   handleExtraInfo = (character) => {
-    this.setState({
-      character: this.state.charactersToShow,
-      current: character
-    })
+    //object operator checks how many keys are insinde the object
+    if (character.id === this.state.current.id){
+      this.setState({
+        current: {}
+      })
+    } else {
+      this.setState({
+        character: this.state.charactersToShow,
+        current: character
+      })
+    }
+    
   }
 
 
@@ -127,8 +135,8 @@ class App extends Component {
             charactersToShow={this.state.charactersToShow}
             status={this.state.status}
             handleShowFavourites={this.handleShowFavourites}
-            handleExtraInfo={this.handleExtraInfo}
             clearFavourites={this.clearFavourites}
+            current={this.state.current}
             />
         </div>
         <div>

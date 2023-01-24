@@ -22,7 +22,10 @@ class Aside extends Component {
                 handleShowFavourites={this.props.handleShowFavourites}
                 clearFavourites={this.props.clearFavourites}
                 />
-                <ExtraInfo />
+                <ExtraInfo
+                charactersToShow={this.props.charactersToShow}
+                current={this.props.current}
+                 />
                 <p>made by me</p>
             </div>
         )

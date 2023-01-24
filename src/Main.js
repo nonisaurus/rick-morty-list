@@ -5,6 +5,7 @@ const Main = (props) => {
     const onLoadCharactersMap = props.charactersToShow.map((character) => {
         return <Character 
             handleToggleFavourite={() => props.handleToggleFavourite(character)} 
+            handleExtraInfo={() => props.handleExtraInfo(character)}
             name={character.name} 
             picture={character.image} 
             key={character.id} />
