@@ -8,7 +8,9 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      onLoadCharacters: []
+      charactersToShow: [],
+      searchCharacter: '',
+      searchValue: ''
     }
   }
 
@@ -19,25 +21,50 @@ class App extends Component {
       for (let i = 0; i < 5; i ++){
         randomNumber.push(Math.floor(Math.random() * 826) +1);
       }
-      console.log(randomNumber)
-      
       // await goes with it
-      const onLoadCharacters = await getCharacter(randomNumber)
-      console.log(onLoadCharacters)
-
+      const charactersToShow = await getCharacter(randomNumber)
       this.setState({
-        onLoadCharacters: onLoadCharacters.data
+        charactersToShow: charactersToShow.data
       })
-
     } 
     onLoad();
+
+  }
+
+
+  APICall = (value) => {
+    console.log('apicall', value)
+    const apiUrl = `https://rickandmortyapi.com/api/character?${value}`
+
+    fetch(apiUrl)
+    .then((response) => {
+      return response.json()
+    })
+    .then((results) => {
+      console.log(results)
+      this.setState({
+        charactersToShow: results.results
+      })
+    })
+    .catch((error) => {console.log('api doesnt work')})
+  }
+
+
+  handleSearchInput = (e) => {
+    // console.log('handlesearch >>', e) 
+    const userInput = e.target.value
+    console.log(userInput)
+
+    this.setState({
+      searchValue: userInput
+    })
   }
 
   render() {
     return (
       <div className="App">
-        <Aside />
-        <Main onLoadCharacters={this.state.onLoadCharacters} />
+        <Aside handleSearchInput={this.handleSearchInput} searchValue={this.state.searchValue} APICall={this.APICall} />
+        <Main charactersToShow={this.state.charactersToShow} />
       </div>
     );
   }

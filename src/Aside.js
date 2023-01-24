@@ -9,7 +9,7 @@ class Aside extends Component {
         return(
             <div className="aside-container">
                 <p>Logo</p>
-                <SearchByName />
+                <SearchByName handleSearchInput={this.props.handleSearchInput} searchValue={this.props.searchValue} APICall={this.props.APICall} />
                 <Filter />
                 <Favourite />
                 <ExtraInfo />
