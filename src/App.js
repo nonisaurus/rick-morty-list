@@ -11,7 +11,8 @@ class App extends Component {
       charactersToShow: [],
       searchCharacter: '',
       searchValue: '',
-      status: ''
+      status: '',
+      favourite: []
     }
   }
 
@@ -56,6 +57,18 @@ class App extends Component {
     })
   }
 
+  handleToggleFavourite = (character) => {
+    console.log('hand toggle >>', character)
+    const favouriteCharaters = [...this.state.favourite]
+    console.log(favouriteCharaters)
+    this.setState({
+      charactersToShow: favouriteCharaters
+      
+    })
+  }
+
+
+
   render() {
     return (
       <div className="App">
@@ -66,12 +79,16 @@ class App extends Component {
             APICall={this.APICall} 
             charactersToShow={this.state.charactersToShow}
             status={this.state.status}
+            handleToggleFavourite = {this.handleToggleFavourite}
           />
         </div>
         <div>
             <p>title</p>
             {!this.state.charactersToShow && <h1>Try again! that's not a character...</h1>}
-            {this.state.charactersToShow && <Main charactersToShow={this.state.charactersToShow} />}
+            {this.state.charactersToShow && <Main 
+            charactersToShow={this.state.charactersToShow}
+            handleToggleFavourite={this.handleToggleFavourite}
+            />}
         </div>
       
       </div>

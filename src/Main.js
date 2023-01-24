@@ -2,8 +2,12 @@ import Character from "./Character";
 
 const Main = (props) => {
 
-    const onLoadCharactersMap = props.charactersToShow.map((character, index) => {
-        return <Character name={character.name} picture={character.image} key={character.id} />
+    const onLoadCharactersMap = props.charactersToShow.map((character) => {
+        return <Character 
+            handleToggleFavourite={(character) => props.handleToggleFavourite} 
+            name={character.name} 
+            picture={character.image} 
+            key={character.id} />
     })
 
         return(
