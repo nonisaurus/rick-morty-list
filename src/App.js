@@ -12,7 +12,9 @@ class App extends Component {
       searchCharacter: '',
       searchValue: '',
       status: '',
-      favourite: []
+      favouriteCharacters: [],
+      current: {},
+      currentlyShowing: 'allcharacters'
     }
   }
 
@@ -32,7 +34,7 @@ class App extends Component {
     onLoad();
   }
 
-
+  // API CALL
   APICall = (value) => {
     const apiUrl = `https://rickandmortyapi.com/api/character?${value}`
     fetch(apiUrl)
@@ -41,32 +43,70 @@ class App extends Component {
     })
     .then((results) => {
       this.setState({
-        charactersToShow: results.results,
+        charactersToShow: results.results
       })
     })
     .catch((error) => {console.log('api doesnt work')})
   }
 
-
+  // SAVE SEARCH INPUT
   handleSearchInput = (e) => {
-    // console.log('handlesearch >>', e) 
     const userInput = e.target.value
-
     this.setState({
       searchValue: userInput
     })
   }
 
+  // FAVOURITE BUTTON
   handleToggleFavourite = (character) => {
     console.log('hand toggle >>', character)
-    const favouriteCharaters = [...this.state.favourite]
-    console.log(favouriteCharaters)
+    // spread operator ... to make a shallow copy saved in variable
+    const newFavouriteCharacters = [...this.state.favouriteCharacters]
+    // saving index of character
+    const characterIndex = newFavouriteCharacters.indexOf(character)
+    // if the characterid is not in the array (-1) then push it to the new array (newfavcharac) 
+    if (characterIndex === -1){
+          newFavouriteCharacters.push(character) 
+    } else {
+      //else (cause it is in the array) then take it out and show only favs array
+      newFavouriteCharacters.splice(characterIndex, 1)
+      this.setState({
+        charactersToShow: newFavouriteCharacters
+      })
+    } 
+    // set favcharac state this this local variable
     this.setState({
-      charactersToShow: favouriteCharaters
-      
+      favouriteCharacters: newFavouriteCharacters
     })
   }
 
+  // toggle function
+  handleShowFavourites = () => {
+    if(this.state.currentlyShowing === 'allcharacters'){
+      // it will update the character to show with the favs
+    this.setState({
+      previousList: this.state.charactersToShow,
+      charactersToShow: this.state.favouriteCharacters,
+      currentlyShowing: 'favourites'
+    })
+    console.log('show favs')
+    } else {
+      this.setState({
+        charactersToShow: this.state.previousList,
+        currentlyShowing: 'allcharacters'
+      })
+    }
+
+    
+  }
+
+  // EXTRA INFO WHEN CHARACTER CARD CLICKED
+  handleExtraInfo = (character) => {
+    this.setState({
+      character: this.state.charactersToShow,
+      current: character
+    })
+  }
 
 
   render() {
@@ -79,8 +119,9 @@ class App extends Component {
             APICall={this.APICall} 
             charactersToShow={this.state.charactersToShow}
             status={this.state.status}
-            handleToggleFavourite = {this.handleToggleFavourite}
-          />
+            handleShowFavourites={this.handleShowFavourites}
+            handleExtraInfo={this.handleExtraInfo}
+            />
         </div>
         <div>
             <p>title</p>
@@ -88,6 +129,7 @@ class App extends Component {
             {this.state.charactersToShow && <Main 
             charactersToShow={this.state.charactersToShow}
             handleToggleFavourite={this.handleToggleFavourite}
+            handleExtraInfo={this.handleExtraInfo}
             />}
         </div>
       

@@ -18,7 +18,7 @@ class Aside extends Component {
                 charactersToShow={this.props.charactersToShow}
                 APICall={this.props.APICall} 
                 />
-                <Favourite />
+                <Favourite handleShowFavourites={this.props.handleShowFavourites}/>
                 <ExtraInfo />
                 <p>made by me</p>
             </div>
