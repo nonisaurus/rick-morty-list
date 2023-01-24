@@ -8,7 +8,6 @@ const Main = (props) => {
 
         return(
             <div className="main-container">
-                <h1>title</h1>
                 {onLoadCharactersMap}
             </div>
         )

@@ -1,13 +1,31 @@
 import React, {Component} from "react";
 
 class Filter extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            charactersToShow: this.props.charactersToShow
+        }
+    }
+
+    apiCallFilter = (event) => {
+        console.log('filter', event.target.value)
+        this.props.APICall(`status=${event.target.value}`)
+    }
+
+
     render(){
         return(
             <div className="filter">
-                filter by status
-                {/* element with options - hide this with class, toggle class on click
-                 ul >li, li, li
-                 */}
+                <label>
+                Status?
+                <select onChange={this.apiCallFilter}>
+                <option value="" >choose</option>
+                <option value="alive" >Alive</option>
+                <option value="dead">Dead</option>
+                <option value="unknown">Unknown</option>
+                </select>
+                </label>
             </div>
         )
     }

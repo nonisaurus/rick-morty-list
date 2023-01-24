@@ -10,7 +10,8 @@ class App extends Component {
     this.state = {
       charactersToShow: [],
       searchCharacter: '',
-      searchValue: ''
+      searchValue: '',
+      status: ''
     }
   }
 
@@ -28,22 +29,18 @@ class App extends Component {
       })
     } 
     onLoad();
-
   }
 
 
   APICall = (value) => {
-    console.log('apicall', value)
     const apiUrl = `https://rickandmortyapi.com/api/character?${value}`
-
     fetch(apiUrl)
     .then((response) => {
       return response.json()
     })
     .then((results) => {
-      console.log(results)
       this.setState({
-        charactersToShow: results.results
+        charactersToShow: results.results,
       })
     })
     .catch((error) => {console.log('api doesnt work')})
@@ -53,7 +50,6 @@ class App extends Component {
   handleSearchInput = (e) => {
     // console.log('handlesearch >>', e) 
     const userInput = e.target.value
-    console.log(userInput)
 
     this.setState({
       searchValue: userInput
@@ -63,8 +59,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Aside handleSearchInput={this.handleSearchInput} searchValue={this.state.searchValue} APICall={this.APICall} />
-        <Main charactersToShow={this.state.charactersToShow} />
+        <div>
+          <Aside 
+            handleSearchInput={this.handleSearchInput} 
+            searchValue={this.state.searchValue} 
+            APICall={this.APICall} 
+            charactersToShow={this.state.charactersToShow}
+            status={this.state.status}
+          />
+        </div>
+        <div>
+            <p>title</p>
+            {!this.state.charactersToShow && <h1>Try again! that's not a character...</h1>}
+            {this.state.charactersToShow && <Main charactersToShow={this.state.charactersToShow} />}
+        </div>
+      
       </div>
     );
   }

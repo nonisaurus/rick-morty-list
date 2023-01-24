@@ -7,7 +7,6 @@ class SearchByName extends Component {
 
     apiCallSearch = (e) => {
         e.preventDefault()
-        console.log('apicallsearch >>>', this.props.searchValue)
         this.props.APICall(`name=${this.props.searchValue}`)
       }
 

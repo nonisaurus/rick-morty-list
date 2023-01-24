@@ -9,8 +9,15 @@ class Aside extends Component {
         return(
             <div className="aside-container">
                 <p>Logo</p>
-                <SearchByName handleSearchInput={this.props.handleSearchInput} searchValue={this.props.searchValue} APICall={this.props.APICall} />
-                <Filter />
+                <SearchByName 
+                handleSearchInput={this.props.handleSearchInput}
+                searchValue={this.props.searchValue} 
+                APICall={this.props.APICall} 
+                />
+                <Filter 
+                charactersToShow={this.props.charactersToShow}
+                APICall={this.props.APICall} 
+                />
                 <Favourite />
                 <ExtraInfo />
                 <p>made by me</p>
