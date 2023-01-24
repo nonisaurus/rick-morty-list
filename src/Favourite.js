@@ -6,7 +6,7 @@ class Favourite extends Component {
             <div>
                 <div className="favourite"> favourite </div>
                 <button onClick={this.props.handleShowFavourites} >show</button>
-                <button>empty</button>
+                <button onClick={this.props.clearFavourites} >empty</button>
             </div>
             
         )

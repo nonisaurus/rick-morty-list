@@ -96,9 +96,16 @@ class App extends Component {
         currentlyShowing: 'allcharacters'
       })
     }
-
-    
   }
+
+  clearFavourites = (e) => {
+    console.log('Clering List...');
+    e.preventDefault()
+    this.setState({
+        favouriteCharacters: [],
+        charactersToShow: []
+    })
+}
 
   // EXTRA INFO WHEN CHARACTER CARD CLICKED
   handleExtraInfo = (character) => {
@@ -121,6 +128,7 @@ class App extends Component {
             status={this.state.status}
             handleShowFavourites={this.handleShowFavourites}
             handleExtraInfo={this.handleExtraInfo}
+            clearFavourites={this.clearFavourites}
             />
         </div>
         <div>
