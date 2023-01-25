@@ -57,13 +57,14 @@ class App extends Component {
     })
   }
 
+
   // FAVOURITE BUTTON
   handleToggleFavourite = (character) => {
     // spread operator ... to make a shallow copy saved in variable
     const newFavouriteCharacters = [...this.state.favouriteCharacters]
     // saving index of character
     const characterIndex = newFavouriteCharacters.indexOf(character)
-    // if the characterid is not in the array (-1) then push it to the new array (newfavcharac) 
+    // if the characterID is not in the array (-1) then push it to the new array (newfavcharac) 
     if (characterIndex === -1){
           newFavouriteCharacters.push(character) 
     } else {
@@ -97,6 +98,8 @@ class App extends Component {
     }
   }
 
+
+  // CLEAR FAVS
   clearFavourites = (e) => {
     console.log('Clering List...');
     e.preventDefault()
@@ -106,20 +109,7 @@ class App extends Component {
     })
 }
 
-  // EXTRA INFO WHEN CHARACTER CARD CLICKED
-  handleExtraInfo = (character) => {
-    //if IDs match than empty object otherwise add it to display extra info
-    if (character.id === this.state.current.id){
-      this.setState({
-        current: {}
-      })
-    } else {
-      this.setState({
-        character: this.state.charactersToShow,
-        current: character
-      })
-    }
-  }
+
 
 
   render() {
