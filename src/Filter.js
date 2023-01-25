@@ -12,7 +12,6 @@ class Filter extends Component {
         this.props.APICall(`status=${event.target.value}`)
     }
 
-
     render(){
         return(
             <div className="filter">

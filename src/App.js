@@ -109,6 +109,20 @@ class App extends Component {
     })
 }
 
+   // EXTRA INFO WHEN CHARACTER CARD CLICKED
+   handleExtraInfo = (character) => {
+    //if IDs match than empty object otherwise add it to display extra info
+    if (character.id === this.state.current.id){
+      this.setState({
+        current: {}
+      })
+    } else {
+      this.setState({
+        character: this.state.charactersToShow,
+        current: character
+      })
+    }
+  }
 
 
 

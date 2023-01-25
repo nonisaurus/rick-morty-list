@@ -1,4 +1,4 @@
-const Character = (props) => {
+const CharacterCard = (props) => {
         return(
             <div className="character-container">
                 <button className="fav-btn" onClick={props.handleToggleFavourite} >FAV</button>
@@ -8,9 +8,10 @@ const Character = (props) => {
                 <img alt="charater picture" src={props.picture} onClick={props.handleExtraInfo} ></img>
 
                 <h1>{props.name}</h1>
+                
                 <p>{props.nickName}</p>
             </div>
         )
 }
 
-export default Character
+export default CharacterCard

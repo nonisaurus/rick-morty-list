@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Character from "./Character";
+import CharacterCard from "./Character";
 import AddingOwnCharacter from "./AddingOwnCharacter";
 
 class Main extends Component {
@@ -11,23 +11,26 @@ class Main extends Component {
         }
     }
 
+    // SAVING INPUT VALUE
     newCharacterName = (e) => {
         console.log('addTaskChange...', e)
         this.setState({
             addCharacterName: e.target.value
-        })}
-    
-    addNewCharacter = (e) => {
-        e.preventDefault()
-        this.setState({
-            // somehow have to add the new character to create new card in character component as a new character with the input field value as a name (and preset picture)
-            addCharacterName: ''
         })
+
+        const ownCharacter = {
+                name: this.state.addCharacterName,
+                id: 'C-137',
+                image: ''
+              }
+
     }
 
-    addNewCharacterCard = () => {
-        <Character />
+    addNewCharacterClick = (e) => {
+        e.preventDefault()
+        this.props.charactersToShow.push(this.newCharacterName)
     }
+
 
     // ADDING NICKNAME
     addNicknameFunction = (character) => {
@@ -35,20 +38,20 @@ class Main extends Component {
         //adding a new bit to the object
         character.nickName = input;
         this.setState({
-          addNickname: input
+            // this function works if it is here but not if I delete this state
         })
       }
 
     render(){
         const onLoadCharactersMap = this.props.charactersToShow.map((character) => {
-        return <Character 
+        return <CharacterCard 
             handleToggleFavourite={() => this.props.handleToggleFavourite(character)} 
             handleExtraInfo={() => this.props.handleExtraInfo(character)}
             name={character.name} 
             picture={character.image} 
             key={character.id}
             addNicknameFunction={() => this.addNicknameFunction(character)}
-            nickName={character.addNickname}
+            nickName={character.nickName}
             />
     })
         return(
