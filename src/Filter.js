@@ -9,7 +9,6 @@ class Filter extends Component {
     }
 
     apiCallFilter = (event) => {
-        console.log('filter', event.target.value)
         this.props.APICall(`status=${event.target.value}`)
     }
 

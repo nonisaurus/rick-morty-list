@@ -21,7 +21,7 @@ class App extends Component {
     // the website will load while this will get its data in the background (async keyword means it's expecting something asynchronous to happen inside the function)
     const onLoad = async () => {
       const randomNumber = []
-      for (let i = 0; i < 5; i ++){
+      for (let i = 0; i < 20; i ++){
         randomNumber.push(Math.floor(Math.random() * 826) +1);
       }
       // await goes with it
@@ -50,6 +50,7 @@ class App extends Component {
 
   // SAVE SEARCH INPUT
   handleSearchInput = (e) => {
+    e.preventDefault()
     const userInput = e.target.value
     this.setState({
       searchValue: userInput
@@ -58,7 +59,6 @@ class App extends Component {
 
   // FAVOURITE BUTTON
   handleToggleFavourite = (character) => {
-    console.log('hand toggle >>', character)
     // spread operator ... to make a shallow copy saved in variable
     const newFavouriteCharacters = [...this.state.favouriteCharacters]
     // saving index of character
@@ -138,9 +138,10 @@ class App extends Component {
             />
         </div>
         <div>
-            <p>title</p>
+            <h1>TITLE</h1>
             {!this.state.charactersToShow && <h1>Try again! that's not a character...</h1>}
-            {this.state.charactersToShow && <Main 
+            {this.state.charactersToShow && 
+            <Main 
             charactersToShow={this.state.charactersToShow}
             handleToggleFavourite={this.handleToggleFavourite}
             handleExtraInfo={this.handleExtraInfo}
