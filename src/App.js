@@ -1,5 +1,4 @@
 import React, { Component} from 'react';
-import './App.css';
 import Aside from './Aside';
 import Main from './Main';
 import { getCharacter } from 'rickmortyapi'
@@ -109,7 +108,7 @@ class App extends Component {
 
   // EXTRA INFO WHEN CHARACTER CARD CLICKED
   handleExtraInfo = (character) => {
-    //object operator checks how many keys are insinde the object
+    //if IDs match than empty object otherwise add it to display extra info
     if (character.id === this.state.current.id){
       this.setState({
         current: {}
@@ -120,7 +119,6 @@ class App extends Component {
         current: character
       })
     }
-    
   }
 
 
