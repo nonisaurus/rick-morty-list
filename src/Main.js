@@ -1,37 +1,32 @@
+import React, { Component } from "react";
 import Character from "./Character";
 import AddingOwnCharacter from "./AddingOwnCharacter";
 
-const Main = (props) => {
+class Main extends Component {
+    constructor(props){
+        super(props)
+    }
 
-    const onLoadCharactersMap = props.charactersToShow.map((character) => {
+    
+    render(){
+        const onLoadCharactersMap = this.props.charactersToShow.map((character) => {
         return <Character 
-            handleToggleFavourite={() => props.handleToggleFavourite(character)} 
-            handleExtraInfo={() => props.handleExtraInfo(character)}
+            handleToggleFavourite={() => this.props.handleToggleFavourite(character)} 
+            handleExtraInfo={() => this.props.handleExtraInfo(character)}
             name={character.name} 
             picture={character.image} 
             key={character.id} />
     })
-
-    // handleClick = (e) => {
-//     e.stopPropagation()
-    
-//     console.log('Handling Fave click!')
-
-//     // Add this line. You'll call the function passed through props
-//     this.props.onFaveToggle()
-
-//     // Delete the `setState` line. You no longer track state here
-//     // this.setState({isFave: !this.state.isFave})
-    
-// }
-
         return(
             <div className="main-container">
                 <AddingOwnCharacter />
-                {onLoadCharactersMap}
+                <ul>
+                    {onLoadCharactersMap}
+                </ul>
+                
             </div>
         )
-
+    }
 }
 
 export default Main
