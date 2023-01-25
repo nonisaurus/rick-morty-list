@@ -1,5 +1,5 @@
 * {
-    border: 2px solid rgb(196, 195, 203);
+    border: 1px solid rgb(196, 195, 203);
     font-size: 30px;
 }
 
@@ -8,5 +8,10 @@
     grid-template-columns: 30% 70%;
     justify-content: center;
     align-content: center;
+}
+
+.aside-container {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
 }
 
