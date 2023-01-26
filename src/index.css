@@ -147,20 +147,21 @@
 	border-radius: 1rem;
     padding: 1rem 0rem;
     margin: 0.3rem 2rem;
+    width: 1rem;
 }
 
 .fav-btn {
     background-image: url(/pictures/likedpic.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 50%;
+    background-size: 100%;
 }
 
 .nick-btn {
     background-image: url(/pictures/addnickname.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 50%;
+    background-size: 100%;
 }
 
 .character-pic{
