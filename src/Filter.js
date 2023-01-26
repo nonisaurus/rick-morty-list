@@ -19,8 +19,8 @@ class Filter extends Component {
                 Status?  
                 <select onChange={this.apiCallFilter}>
                 <option value="" >choose</option>
-                <option value="alive" >Alive</option>
-                <option value="dead">Dead</option>
+                <option value="Alive" >Alive</option>
+                <option value="Dead">Dead</option>
                 <option value="unknown">Unknown</option>
                 </select>
                 </label>

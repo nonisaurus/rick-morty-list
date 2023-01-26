@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
     -moz-box-sizing: border-box; 
     -webkit-box-sizing: border-box; 
@@ -5,7 +7,10 @@
     position: relative;
     padding: 0; 
     margin: 0 auto;
-    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+    font-family: 'Roboto', sans-serif;
+
+
+
 }
 
 .app {
@@ -27,9 +32,9 @@
     background-color: rgb(0, 0, 0);
     height: 100vh;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 25% 15% 15% 15% 25% 5%;
     border-radius: 0 25px 25px 0;
 }
 
@@ -47,7 +52,7 @@
 /* SEARCH */
 .search-input {
     height: 2rem;
-    width: 13rem;
+    width: 10rem;
     border-radius: 1rem;
 }
 
@@ -77,9 +82,7 @@
 
 /* EXTRA INFO */
 .extra-info{
-    font-size: 0.5rem;
-    margin: 7rem;
-    
+    font-size: 0.5rem;    
 }
 
 /* FOOTER */
@@ -120,6 +123,12 @@
 }
 
 /* CHARACTER CONTAINER */
+.character-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .character-container {
     border-radius: 0.8rem;
     border: 2px black solid;
@@ -128,6 +137,8 @@
     grid-template-rows: 50% 50%;
     align-items: center;
     justify-content: center;
+    width: 25%;
+    margin: 0.5rem 1rem;
 }
 
 .character-btn {
@@ -168,10 +179,14 @@
 
 .character-name {
     font-size: 1rem;
+    padding: 0.5rem;
 }
 
 .character-nick {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
+    font-style: italic;
+    padding: 0.5rem;
+
 }
 
 

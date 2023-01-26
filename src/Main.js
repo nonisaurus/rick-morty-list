@@ -6,37 +6,35 @@ class Main extends Component {
     constructor(props){
         super(props)
         this.state = {
-            addCharacterName: '',
-            addNickname: ''
+            addCharacterName: ''
         }
     }
 
     // SAVING INPUT VALUE
     newCharacterName = (e) => {
+        e.stopPropagation()
         this.setState({
             addCharacterName: e.target.value
         })
         console.log(this.state.addCharacterName)
     }
 
+    // ADDING NEW CHARACTER 
     addNewCharacterClick = (e) => {
-        e.stopPropagation()
-
+        e.preventDefault()
         const ownCharacter = {
             name: this.state.addCharacterName,
-            id: 'C-137',
-            image: '',
-            key: 'C137'
+            id: Math.floor(Math.random() * 1000),
+            image: ''
           }
 
-        this.props.charactersToShow.unshift(ownCharacter.map(() => {
-            return <CharacterCard 
-            name={ownCharacter.name}
-            id={ownCharacter.id}
-            image={ownCharacter.image}
-            key={ownCharacter.key}
-             />
-        }))
+        this.setState({
+            addCharacterName: ''
+        })
+          console.log(e)
+          console.log("characters", ownCharacter)
+
+        this.props.charactersToShow.unshift(ownCharacter)
     }
 
 
@@ -65,7 +63,10 @@ class Main extends Component {
         return(
             <div className="main-container">
                 <div className="add-character-div">
-                    <AddingOwnCharacter newCharacterName={this.addNewCharacterClick} />
+                    <AddingOwnCharacter 
+                    addCharacterName={this.state.addCharacterName}
+                    newCharacterName={this.newCharacterName}
+                    addNewCharacterClick={this.addNewCharacterClick} />
                 </div>
                 <div className="character-div" >
                     {onLoadCharactersMap}
