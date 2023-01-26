@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CharacterCard from "./Character";
+import CharacterCard from "./CharacterCard";
 import AddingOwnCharacter from "./AddingOwnCharacter";
 
 class Main extends Component {
@@ -13,22 +13,30 @@ class Main extends Component {
 
     // SAVING INPUT VALUE
     newCharacterName = (e) => {
-        console.log('addTaskChange...', e)
         this.setState({
             addCharacterName: e.target.value
         })
-
-        const ownCharacter = {
-                name: this.state.addCharacterName,
-                id: 'C-137',
-                image: ''
-              }
-
+        console.log(this.state.addCharacterName)
     }
 
     addNewCharacterClick = (e) => {
-        e.preventDefault()
-        this.props.charactersToShow.push(this.newCharacterName)
+        e.stopPropagation()
+
+        const ownCharacter = {
+            name: this.state.addCharacterName,
+            id: 'C-137',
+            image: '',
+            key: 'C137'
+          }
+
+        this.props.charactersToShow.unshift(ownCharacter.map(() => {
+            return <CharacterCard 
+            name={ownCharacter.name}
+            id={ownCharacter.id}
+            image={ownCharacter.image}
+            key={ownCharacter.key}
+             />
+        }))
     }
 
 
@@ -38,7 +46,7 @@ class Main extends Component {
         //adding a new bit to the object
         character.nickName = input;
         this.setState({
-            // this function works if it is here but not if I delete this state
+            // this function works if it is here but not if I delete this state WHY???
         })
       }
 
@@ -57,7 +65,7 @@ class Main extends Component {
         return(
             <div className="main-container">
                 <div className="add-character-div">
-                    <AddingOwnCharacter newCharacterName={this.newCharacterName} />
+                    <AddingOwnCharacter newCharacterName={this.addNewCharacterClick} />
                 </div>
                 <div className="character-div" >
                     {onLoadCharactersMap}

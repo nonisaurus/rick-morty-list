@@ -89,7 +89,6 @@ class App extends Component {
       charactersToShow: this.state.favouriteCharacters,
       currentlyShowing: 'favourites'
     })
-    console.log('show favs')
     } else {
       this.setState({
         charactersToShow: this.state.previousList,
