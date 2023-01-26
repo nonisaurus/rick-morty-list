@@ -56,11 +56,12 @@ class Main extends Component {
     })
         return(
             <div className="main-container">
-                <AddingOwnCharacter newCharacterName={this.newCharacterName} />
-                <ul>
+                <div className="add-character-div">
+                    <AddingOwnCharacter newCharacterName={this.newCharacterName} />
+                </div>
+                <div className="character-div" >
                     {onLoadCharactersMap}
-                </ul>
-                
+                </div>
             </div>
         )
     }
@@ -68,29 +69,3 @@ class Main extends Component {
 
 export default Main
 
-
-// class Main extends Component {
-//     constructor(props){
-//         super(props)
-//     }
-
-//     onLoadCharacters = () => {
-//         this.props.charactersToShow.map((character) => {
-//             return <Character 
-//                 handleToggleFavourite={(character) => this.props.handleToggleFavourite} 
-//                 name={this.character.name} 
-//                 picture={this.character.image} 
-//                 key={this.character.id} />
-//         })
-//     }
-
-//     render() {
-//         return(
-//             <div className="main-container">
-//                 <Character />
-//             </div>
-//         )
-//     }
-// }
-
-// export default Main

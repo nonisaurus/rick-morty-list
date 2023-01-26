@@ -7,7 +7,7 @@ I created a list of Rick and Morty characters using a Rick and Morti [API](https
 <br>
 
 ## Wireframe and planning 
-![](./pictures/Wireframe%20Flowchart%20Whiteboard%20in%20Violet%20Blue%20Minimal%20Lines%20Style.png)
+![](./pictures/WireframeForRickAndMorty.png)
 
 ## Technology used
 - Canva

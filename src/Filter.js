@@ -16,7 +16,7 @@ class Filter extends Component {
         return(
             <div className="filter">
                 <label>
-                Status?
+                Status?  
                 <select onChange={this.apiCallFilter}>
                 <option value="" >choose</option>
                 <option value="alive" >Alive</option>

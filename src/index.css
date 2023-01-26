@@ -1,17 +1,179 @@
 * {
-    border: 1px solid rgb(196, 195, 203);
-    font-size: 30px;
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+    position: relative;
+    padding: 0; 
+    margin: 0 auto;
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
 }
 
-.App {
+.app {
     display: grid;
     grid-template-columns: 30% 70%;
-    justify-content: center;
     align-content: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
 }
 
+
+
+
+
+/* ASIDE */
 .aside-container {
     color: rgb(255, 255, 255);
     background-color: rgb(0, 0, 0);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0 25px 25px 0;
 }
+
+/* LOGO */
+.logo-aside {
+    background-image: url(/pictures/logoforsidebar.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 6rem;
+    width: 6rem;
+    padding: 5rem 0;
+}
+
+/* SEARCH */
+.search-input {
+    height: 2rem;
+    width: 13rem;
+    border-radius: 1rem;
+}
+
+.search-btn {
+    height: 2rem;
+    width: 3rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(47, 147, 49);
+}
+
+/* STATUS */
+.filter {
+    height: 2rem;
+}
+
+/* FAVOURITES */
+.favourite {
+    height: 2rem;
+    display: flex;
+}
+
+/* EXTRA INFO */
+.extra-info{
+    font-size: 0.5rem;
+    margin: 7rem;
+    
+}
+
+/* FOOTER */
+.footer-iguess {
+    font-size: 0.7rem;
+    padding-bottom: 1.2rem;
+}
+
+/* TITLE */
+.title-main {
+    background-image: url(/pictures/rickandmortytitle.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 5rem 0;
+}
+
+
+
+
+
+/* MAIN */
+.main-wrapper {
+    margin: 0;
+}
+
+.main-container {
+    margin: 0;
+    /* display: flex; */
+}
+
+/* ADDING CHARACTER */
+.adding-character {
+    text-align: center;
+    height: 2rem;
+    width: 15rem;
+    border-radius: 1rem;
+}
+
+/* CHARACTER CONTAINER */
+.character-container {
+    border-radius: 0.8rem;
+    border: 2px black solid;
+    display: grid;
+    grid-template-columns: 40% 30% 20%; 
+    grid-template-rows: 50% 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.character-btn {
+	cursor: pointer;
+	background: #000000;
+	border-radius: 1rem;
+    padding: 1rem 0rem;
+    margin: 0.3rem 2rem;
+}
+
+.fav-btn {
+    background-image: url(/pictures/likedpic.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.nick-btn {
+    background-image: url(/pictures/addnickname.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.character-pic{
+    grid-row: 1 / span 2;
+    grid-column: 1;
+    width: 70%;
+
+}
+
+.character-name-contain {
+    grid-row: 1 / span 2;
+    grid-column: 2;
+    align-items: center;
+    justify-content: center;
+}
+
+.character-name {
+    font-size: 1rem;
+}
+
+.character-nick {
+    font-size: 0.7rem;
+}
+
+
+
 

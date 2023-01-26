@@ -15,9 +15,9 @@ class SearchByName extends Component {
             <div className="search">
                 <form >
                     <label>
-                        <input placeholder="Search by character:" input="text" onChange={this.props.handleSearchInput} />
+                        <input className="search-input" placeholder="Search by character:" input="text" onChange={this.props.handleSearchInput} />
                     </label>
-                    <button type="submit" onClick={this.apiCallSearch}  >search</button>
+                    <button className="search-btn" type="submit" onClick={this.apiCallSearch}  >GO</button>
                 </form>         
             </div>
         )

@@ -1,15 +1,18 @@
 const CharacterCard = (props) => {
         return(
             <div className="character-container">
-                <button className="fav-btn" onClick={props.handleToggleFavourite} >FAV</button>
 
-                <button className="nickname-btn" onClick={(e) => props.addNicknameFunction(e)} >NICK</button>
+                <img className="character-pic" alt="charater picture" src={props.picture} onClick={props.handleExtraInfo} ></img>
 
-                <img alt="charater picture" src={props.picture} onClick={props.handleExtraInfo} ></img>
+                <button className="character-btn fav-btn" onClick={props.handleToggleFavourite} ></button>
 
-                <h1>{props.name}</h1>
+                <button className="character-btn nick-btn" onClick={(e) => props.addNicknameFunction(e)} ></button>
+                <div className="character-name-contain">
+                    <h1 className="character-name" >{props.name}</h1>
+
+                    <p className="character-nick" >{props.nickName}</p>
+                </div>
                 
-                <p>{props.nickName}</p>
             </div>
         )
 }

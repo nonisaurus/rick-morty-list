@@ -8,25 +8,37 @@ class Aside extends Component {
     render(){
         return(
             <div className="aside-container">
-                <p>Logo</p>
-                <SearchByName 
-                handleSearchInput={this.props.handleSearchInput}
-                searchValue={this.props.searchValue} 
-                APICall={this.props.APICall} 
-                />
-                <Filter 
-                charactersToShow={this.props.charactersToShow}
-                APICall={this.props.APICall} 
-                />
-                <Favourite 
-                handleShowFavourites={this.props.handleShowFavourites}
-                clearFavourites={this.props.clearFavourites}
-                />
-                <ExtraInfo
-                charactersToShow={this.props.charactersToShow}
-                current={this.props.current}
-                 />
-                <p>made by me</p>
+                <div className="aside-elements">
+                    <p className="logo-aside"></p>
+                </div>
+                <div className="aside-elements">
+                    <SearchByName 
+                    handleSearchInput={this.props.handleSearchInput}
+                    searchValue={this.props.searchValue} 
+                    APICall={this.props.APICall} 
+                    />
+                </div>
+                <div className="aside-elements">
+                    <Filter 
+                    charactersToShow={this.props.charactersToShow}
+                    APICall={this.props.APICall} 
+                    />
+                </div>
+                <div className="aside-elements">
+                    <Favourite 
+                    handleShowFavourites={this.props.handleShowFavourites}
+                    clearFavourites={this.props.clearFavourites}
+                    />                   
+                </div>
+                <div className="aside-elements">
+                    <ExtraInfo
+                    charactersToShow={this.props.charactersToShow}
+                    current={this.props.current}
+                    />
+                </div>
+                <div className="aside-elements">
+                    <p className="footer-iguess">made by me</p>
+                </div>
             </div>
         )
     }

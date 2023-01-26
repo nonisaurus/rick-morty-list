@@ -21,7 +21,7 @@ class App extends Component {
     // the website will load while this will get its data in the background (async keyword means it's expecting something asynchronous to happen inside the function)
     const onLoad = async () => {
       const randomNumber = []
-      for (let i = 0; i < 20; i ++){
+      for (let i = 0; i < 6; i ++){
         randomNumber.push(Math.floor(Math.random() * 826) +1);
       }
       // await goes with it
@@ -101,7 +101,6 @@ class App extends Component {
 
   // CLEAR FAVS
   clearFavourites = (e) => {
-    console.log('Clering List...');
     e.preventDefault()
     this.setState({
         favouriteCharacters: [],
@@ -128,8 +127,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div>
+      <div className="app">
+
           <Aside 
             handleSearchInput={this.handleSearchInput} 
             searchValue={this.state.searchValue} 
@@ -140,9 +139,9 @@ class App extends Component {
             clearFavourites={this.clearFavourites}
             current={this.state.current}
             />
-        </div>
-        <div>
-            <h1>TITLE</h1>
+
+        <div className="main-wrapper" >
+            <h1 className="title-main"></h1>
             {!this.state.charactersToShow && <h1>Try again! that's not a character...</h1>}
             {this.state.charactersToShow && 
             <Main 
