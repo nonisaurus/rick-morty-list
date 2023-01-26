@@ -21,7 +21,7 @@ class App extends Component {
     // the website will load while this will get its data in the background (async keyword means it's expecting something asynchronous to happen inside the function)
     const onLoad = async () => {
       const randomNumber = []
-      for (let i = 0; i < 9; i ++){
+      for (let i = 0; i < 826; i ++){
         randomNumber.push(Math.floor(Math.random() * 826) +1);
       }
       // await goes with it

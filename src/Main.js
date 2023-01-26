@@ -1,6 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import CharacterCard from "./CharacterCard";
 import AddingOwnCharacter from "./AddingOwnCharacter";
+
+import ReactDOM from 'react-dom';
+import ReactPaginate from 'react-paginate';
 
 class Main extends Component {
     constructor(props){
