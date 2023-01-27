@@ -7,7 +7,7 @@ const ExtraInfo = (props) => {
                         <h2 className="extra-info">Click on charater for more details.</h2>
                     </div>
                 ) : (<div className="extra-info-container" >
-                        <h1>{props.current.name}</h1>
+                        <h1 className="extra-info-name" >{props.current.name}</h1>
                         <p>Species: {props.current.species}</p>
                         <p>Status: {props.current.status}</p>
                         <p>Origin: {props.current.origin.name}</p>
