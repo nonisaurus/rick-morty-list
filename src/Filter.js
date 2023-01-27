@@ -15,13 +15,13 @@ class Filter extends Component {
     render(){
         return(
             <div className="filter">
-                <label>
+                <label >
                 Status?  
-                <select onChange={this.apiCallFilter}>
-                <option value="" >choose</option>
-                <option value="Alive" >Alive</option>
-                <option value="Dead">Dead</option>
-                <option value="unknown">Unknown</option>
+                <select className="status-label" onChange={this.apiCallFilter}>
+                    <option value="" >choose</option>
+                    <option value="Alive" >Alive</option>
+                    <option value="Dead">Dead</option>
+                    <option value="unknown">Unknown</option>
                 </select>
                 </label>
             </div>

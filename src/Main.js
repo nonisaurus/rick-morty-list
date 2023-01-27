@@ -26,7 +26,7 @@ class Main extends Component {
         const ownCharacter = {
             name: this.state.addCharacterName,
             id: Math.floor(Math.random() * 1000),
-            image: ''
+            image: 'https://media1.giphy.com/media/3viE7HuGCTCwgw6kTW/200w_s.gif'
           }
 
         this.setState({

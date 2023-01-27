@@ -61,7 +61,7 @@ As a user, I should be able to:
 ### Building Process
 - First I started by creating the wireframe to visulise what I want the outcome to look like.
 - I set up my components and created a static version of the app.
-- 
+- I broke up the app into two main component 
 
 
 
