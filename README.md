@@ -49,8 +49,6 @@ As a user, I should be able to:
 
 ### Structure
 
-<img align="right" width="130" height="250" src='./pictures/components.png'>
-
 1. index 
 2. App
     - Aside
@@ -61,6 +59,7 @@ As a user, I should be able to:
     - Main
         - character cards
         - adding your own character
+
 <br>
 
 ### Building Process
@@ -126,7 +125,6 @@ As a user, I should be able to:
     </summary>
     <img src='./pictures/addingcharacter-component.png'>
 </details>
-
 
 <br>
 
