@@ -1,9 +1,7 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component } from "react";
 import CharacterCard from "./CharacterCard";
 import AddingOwnCharacter from "./AddingOwnCharacter";
 
-import ReactDOM from 'react-dom';
-import ReactPaginate from 'react-paginate';
 
 class Main extends Component {
     constructor(props){
@@ -50,6 +48,7 @@ class Main extends Component {
             // this function works if it is here but not if I delete this state WHY???
         })
       }
+
 
     render(){
         const onLoadCharactersMap = this.props.charactersToShow.map((character) => {

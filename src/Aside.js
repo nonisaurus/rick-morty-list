@@ -28,6 +28,7 @@ class Aside extends Component {
                     <Favourite 
                     handleShowFavourites={this.props.handleShowFavourites}
                     clearFavourites={this.props.clearFavourites}
+                    currentlyShowing={this.props.currentlyShowing}
                     />                   
                 </div>
                 <div className="aside-elements">
@@ -37,7 +38,7 @@ class Aside extends Component {
                     />
                 </div>
                 <div className="aside-elements">
-                    <p className="footer-iguess">made by me</p>
+                    <p className="footer-iguess"></p>
                 </div>
             </div>
         )
