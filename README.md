@@ -1,37 +1,48 @@
 # Rick and Morty List
 
-I created a list of Rick and Morty characters using a Rick and Morti [API](https://rickandmortyapi.com/documentation). 
+I created a list of Rick and Morty character list using this [API](https://rickandmortyapi.com/documentation). 
 
-> ### You can find my project [here]()
+<br>
+
+> ### You can find my project [here](https://rad-clafoutis-3ef283.netlify.app/)
 
 <br>
 
 ## Wireframe and planning 
 ![](./pictures/WireframeForRickAndMorty.png)
 
+<br>
+
 ## Technology used
-- Canva
-- Visual Studio Code
-- CSS
-- React
+- Languages used:
+    - CSS
+    - React
+- Developer Tools:
+    - Command Line
+    - Visual Studio Code
+    - Google Chrome
+- Deployment: 
+    -  [Netify](https://www.netlify.com/)
+- Wireframing Tool:
+    - Canva
+
+<br>
 
 ## User Stories
 ***
 As a user, I should be able to:
 - [x]  search for characters
-- [x] filter through characters based on some requirements
-- [x] add characters to my favourite list as well as empty this list by selecting them individually or all at once
+- [x] filter through characters based on their status
+- [x] add characters to my favourite list as well as empty this list
 - [x] see more information about the character I clicked 
-- [ ] add my own character to my screen
+- [x] add my own character to the screen
 
-
-Extras
-- [ ] Make the app Responsive
-- [ ] Save the data to localStorage or an API
-
-
+<br>
 
 ## Overview
+***
+![](./pictures/app-over-view.png)
+
 
 ### Structure
 1. index
@@ -43,10 +54,14 @@ Extras
         - fav
         - extra info
     - Main
-        - character
+        - character cards
+        - adding your own character
+<br>
 
-### Static version of app
-
+### Building Process
+- First I started by creating the wireframe to visulise what I want the outcome to look like.
+- I set up my components and created a static version of the app.
+- 
 
 
 

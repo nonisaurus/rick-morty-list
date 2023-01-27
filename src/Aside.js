@@ -4,6 +4,7 @@ import Filter from "./Filter";
 import Favourite from "./Favourite";
 import ExtraInfo from "./ExtraInfo";
 
+
 class Aside extends Component {
     render(){
         return(

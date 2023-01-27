@@ -220,5 +220,10 @@ button {
 }
 
 
-
+@media only screen and (max-width: 375px) {
+    .app {
+        display: flex;
+        flex-direction: column;
+    }
+  }
 
