@@ -65,7 +65,8 @@ As a user, I should be able to:
 ### Building Process
 - First I started by creating the wireframe to visualise what I want the outcome to look like.
 - I set up my components and created a static version of the app.
-- Then I created a function for each of these components.
+- I made my API call because I had to use that to display everything.
+- Then I made my way through each component and added functionality.
 - Afterwards I added a bit of styling.
 
 <br>
