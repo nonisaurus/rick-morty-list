@@ -23,6 +23,7 @@ class Main extends Component {
     // ADDING NEW CHARACTER 
     addNewCharacterClick = (e) => {
         e.preventDefault()
+        // object to create new character card
         const ownCharacter = {
             name: this.state.addCharacterName,
             id: Math.floor(Math.random() * 1000),
@@ -32,15 +33,14 @@ class Main extends Component {
         this.setState({
             addCharacterName: ''
         })
-          console.log(e)
-          console.log("characters", ownCharacter)
-
+        // add it to the front of the displayed array
         this.props.charactersToShow.unshift(ownCharacter)
     }
 
 
     // ADDING NICKNAME
     addNicknameFunction = (character) => {
+        // create a prompt and save it to nickname
         const input = prompt("What's your nickname for this character?"); 
         //adding a new bit to the object
         character.nickName = input;
@@ -51,6 +51,7 @@ class Main extends Component {
 
 
     render(){
+        // map over character cards and pass through relevant info
         const onLoadCharactersMap = this.props.charactersToShow.map((character) => {
         return <CharacterCard 
             handleToggleFavourite={() => this.props.handleToggleFavourite(character)} 

@@ -8,6 +8,7 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
+      // changes what you can see on the screen
       charactersToShow: [],
       searchCharacter: '',
       searchValue: '',
@@ -96,12 +97,15 @@ class App extends Component {
     if(this.state.currentlyShowing === 'allcharacters'){
       // it will update the character to show with the favs
     this.setState({
+      // save current characters on screen 
       previousList: this.state.charactersToShow,
+      // update the screen to show favs
       charactersToShow: this.state.favouriteCharacters,
       currentlyShowing: 'favourites'
     })
     } else {
       this.setState({
+        // saved characters to show
         charactersToShow: this.state.previousList,
         currentlyShowing: 'allcharacters'
       })
@@ -120,12 +124,13 @@ class App extends Component {
 
    // EXTRA INFO WHEN CHARACTER CARD CLICKED
    handleExtraInfo = (character) => {
-    //if IDs match than empty object otherwise add it to display extra info
+    //if IDs match than empty object 
     if (character.id === this.state.current.id){
       this.setState({
         current: {}
       })
     } else {
+      // otherwise add it to display extra info
       this.setState({
         character: this.state.charactersToShow,
         current: character

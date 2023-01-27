@@ -8,6 +8,7 @@ class Filter extends Component {
         }
     }
 
+    // api call and changes end of url
     apiCallFilter = (event) => {
         this.props.APICall(`status=${event.target.value}`)
     }
@@ -17,6 +18,7 @@ class Filter extends Component {
             <div className="filter">
                 <label >
                 Status?  
+                {/* calling the function based on what you click on */}
                 <select className="status-label" onChange={this.apiCallFilter}>
                     <option value="" >choose</option>
                     <option value="Alive" >Alive</option>
