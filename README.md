@@ -31,11 +31,14 @@ I created a list of Rick and Morty character list using React, a bit of CSS and 
 ## User Stories
 ***
 As a user, I should be able to:
-- [x]  search for characters
+- [x] search for characters
 - [x] filter through characters based on their status
-- [x] add characters to my favourite list as well as empty this list
+- [x] add characters to my favourite list
+- [x] remove character from favourite list
+- [x] empty favourite list
 - [x] see more information about the character I clicked 
 - [x] add my own character to the screen
+- [x] edit character card by giving the character a nickname 
 
 <br>
 

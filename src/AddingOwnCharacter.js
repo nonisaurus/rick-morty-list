@@ -10,7 +10,7 @@ class AddingOwnCharacter extends Component {
             <div className="search">
             <form >
                 <label>
-                    <input className="adding-character" placeholder="Wanna add your own character?" input="text" value={this.props.addCharacterName} onChange={this.props.newCharacterName} />
+                    <input className="adding-character" placeholder="What would you call your character?" input="text" value={this.props.addCharacterName} onChange={this.props.newCharacterName} />
                 </label>
                 <button className="search-btn" type="submit" onClick={this.props.addNewCharacterClick} >ADD</button>
             </form>         
